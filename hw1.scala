@@ -96,10 +96,17 @@ def remove(x: Int, l: List[Int]): List[Int] = {
 }
 
 /* Problem 2.6 */
+/* The Scala method m(l1:List[Int], l2:List[Int]):List[Int], when given
+   two integer lists in ascending order, returns a list which contains
+   all elements of each list (duplicate elements retained), still in
+   ascending order. */
 
+/* The Scala method s(l:List[Int])*/
 
 /* Problem 2.7 */
-
+def pair(list1: List[Int], list2: List[Int]): List[(Int, Int)] = {
+    
+}
 
 /* Problem 2.8 */
 
