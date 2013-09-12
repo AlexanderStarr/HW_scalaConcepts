@@ -122,8 +122,10 @@ def pair(list1: List[Int], list2: List[Int]): List[(Int, Int)] = {
 def mergeSort(l: List[Int]): List[Int] = {
     def merge(L1: List[Int], L2: List[Int]): List[Int] = {
         (L1, L2) match {
-            (Nil, Nil) => Nil
-            (, Nil) => 
+            case (Nil, Nil) => Nil
+            case (_, Nil) => L1
+            case (Nil, _) => L2
+            case (h1 :: t1, h2 :: t2) => if (h1 < h2) h1 :: merge(t1, h2 :: t2) else h2 :: merge(h1 :: t1, t2)            
         }
     }
 }
