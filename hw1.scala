@@ -120,7 +120,12 @@ def pair(list1: List[Int], list2: List[Int]): List[(Int, Int)] = {
 
 /* Problem 2.8 */
 def mergeSort(l: List[Int]): List[Int] = {
-    
+    def merge(L1: List[Int], L2: List[Int]): List[Int] = {
+        (L1, L2) match {
+            (Nil, Nil) => Nil
+            (, Nil) => 
+        }
+    }
 }
 
 
