@@ -17,7 +17,7 @@ def mul(m: Int, n: Int): Int = {
     var count:Int = 1
     var total:Int = m
     while (n > count) {
-        product += m
+        total += m
         count += 1
     }
     total
