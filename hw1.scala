@@ -101,15 +101,27 @@ def remove(x: Int, l: List[Int]): List[Int] = {
    all elements of each list (duplicate elements retained), still in
    ascending order. */
 
-/* The Scala method s(l:List[Int])*/
+/* The Scala method s(l:List[Int]), when given a list of integers,
+   returns a (List[Int], List[Int]), where the first list contains the
+   first, third, fifth, etc elements of the input list, but in reverse
+   order.  The second list contains the second, fourth, sixth, etc elements
+   of the input list, but in reverse order.*/
 
 /* Problem 2.7 */
 def pair(list1: List[Int], list2: List[Int]): List[(Int, Int)] = {
+    (list1, list2) match {
+        case (Nil, Nil) => Nil
+        case (_, Nil) => Nil
+        case (Nil, _) => Nil
+        case (h1 :: t1, h2 :: t2) => (h1, h2) :: pair(t1, t2)
+    }
     
 }
 
 /* Problem 2.8 */
-
+def mergeSort(l: List[Int]): List[Int] = {
+    
+}
 
 
 
