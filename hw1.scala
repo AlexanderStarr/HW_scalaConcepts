@@ -120,18 +120,18 @@ def pair(list1: List[Int], list2: List[Int]): List[(Int, Int)] = {
 
 /* Problem 2.8 */
 def mergeSort(l: List[Int]): List[Int] = {
-    def merge(L1: List[Int], L2: List[Int]): List[Int] = {
-        (L1, L2) match {
-            case (Nil, Nil) => Nil
-            case (_, Nil) => L1
-            case (Nil, _) => L2
-            case (h1 :: t1, h2 :: t2) => if (h1 < h2) h1 :: merge(t1, h2 :: t2) else h2 :: merge(h1 :: t1, t2)            
+    if (l.length/2 == 0) {
+        l
+    }
+    else {
+        def merge(L1: List[Int], L2: List[Int]): List[Int] = {
+            (L1, L2) match {
+                case (_, Nil) => L1
+                case (Nil, _) => L2
+                case (h1 :: t1, h2 :: t2) => if (h1 < h2) h1 :: merge(t1, h2 :: t2) else h2 :: merge(h1 :: t1, t2)            
+            }
         }
+        val (l1, l2) = l.splitAt(l.length/2)
+        merge(mergeSort(l1), mergeSort(l2))
     }
 }
-
-
-
-
-
-  
