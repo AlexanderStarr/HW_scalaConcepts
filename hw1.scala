@@ -105,7 +105,7 @@ def remove(x: Int, l: List[Int]): List[Int] = {
    returns a (List[Int], List[Int]), where the first list contains the
    first, third, fifth, etc elements of the input list, but in reverse
    order.  The second list contains the second, fourth, sixth, etc elements
-   of the input list, but in reverse order.*/
+   of the input list, but in reverse order. */
 
 /* Problem 2.7 */
 def pair(list1: List[Int], list2: List[Int]): List[(Int, Int)] = {
@@ -120,9 +120,11 @@ def pair(list1: List[Int], list2: List[Int]): List[(Int, Int)] = {
 
 /* Problem 2.8 */
 def mergeSort(l: List[Int]): List[Int] = {
+    // If the list has a length of 1, then it's already sorted.
     if (l.length/2 == 0) {
         l
     }
+    // If the list is longer, then return the merged result of each sorted half.
     else {
         def merge(L1: List[Int], L2: List[Int]): List[Int] = {
             (L1, L2) match {
